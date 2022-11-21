@@ -30,16 +30,8 @@ class CarritoController extends CarritoModel {
     }
     //metodos
     
-    elProductoEstaEnElCarrito(producto) {
-
-        /* const tengoProductos = 
-        this.carrito.filter(prod => prod.id == producto.id).length
-        //filter construte un array de los elem que coincidan
-        //si no hay me devuelve el array vacio
-        return tengoProductos */
-
+     elProductoEstaEnElCarrito(producto) {
         return this.carrito.filter(prod => prod.id == producto.id).length
-    
     }
 //--
 
@@ -51,15 +43,16 @@ class CarritoController extends CarritoModel {
 //--
 
     agregarAlCarrito(producto) {
-
-        console.log(producto)
+        console.log(producto)//no func
 
         //verficar si el prod esta en el carrito
         if(!this.elProductoEstaEnElCarrito(producto)) {
+            console.log('Ya esta en el carrito')
             producto.cantidad = 1
             this.carrito.push(producto)
         }
         else {
+            console.log('Producto agregado')
             const productoDeCarrito = this.obtenerProductoDeCarrito(producto)
             productoDeCarrito.cantidad++
         }
@@ -105,6 +98,12 @@ class CarritoController extends CarritoModel {
         } catch (error) {
             console.error(error)
         }
+    }//borrar
+    async mostrarTotal(){
+        console.log(this.carrito)
+        const mostrar = document.querySelector("#total")
+        console.log(mostrar)
+        mostrar.innerHTML = this.carrito.length
     }
 
 }

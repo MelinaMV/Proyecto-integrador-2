@@ -15,7 +15,7 @@ async function renderPlantillaListado(listado) {
     }
 }
 
-function agregarCarrito() { // TODO: Trabajar con el método agregarCarrito
+function agregarCarrito() { 
 
 }
 
