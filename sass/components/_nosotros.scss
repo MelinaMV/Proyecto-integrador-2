@@ -1,5 +1,40 @@
-//No funciona ni aca ni en el css
-//error:
-//Refused to apply style from '<URL>' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+article{
+    margin-top: 40px;
 
-//Solucionado. Proximamente continuo
+    @media (max-width: 768px) {
+        margin-top: 55px;
+
+        &.content2{
+            display: block;
+        }
+    }
+    
+}
+h1{
+    margin-bottom: 10px;
+}
+.content{
+    padding: 8px;
+    background-color: rgba(0, 255, 255, 0.082);
+    margin: 15px;
+    display: flex;
+}
+p{
+    color: rgba(240, 248, 255, 0.808);
+    padding: 10px;
+}
+.content2{
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 610px) {
+         display: block;
+         margin-left: 20px;
+    }
+    
+}
+img{
+    margin: 10px;
+    width: 400px;
+    height:300px ;
+}
